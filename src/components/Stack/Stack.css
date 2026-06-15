@@ -1,0 +1,34 @@
+.stack__groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stack__group {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 36px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.stack__label {
+  font-size: 11px;
+  color: var(--faint);
+  letter-spacing: 0.06em;
+  padding-top: 6px;
+}
+
+.stack__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .stack__group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

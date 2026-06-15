@@ -1,172 +1,112 @@
-.show-right {
-  animation: 0.5s forwards show-right;
+/* Shared section styles */
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--line-soft);
 }
 
-@keyframes show-right {
-  from {
-    opacity: 0;
-    transform: translate3d(-30px, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-.experiencia__lugares ul li.active {
-    background-color: #151515;
-    border-left: 2px solid #7fd662;
-    font-weight: 600;
-  }
-
-/* .experiencia {
-  padding: 6.5% 15%;
-  min-height: 35vh;
-} */
-
-
-/* .experiencia__wrapper {
+.section__header {
   display: flex;
-} */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
 
-/* .experiencia__lugares {
-  width: 200px;
+.section__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section__num {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+
+.section__title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+  letter-spacing: 0.04em;
+}
+
+.section__count {
+  font-size: 11px;
+  color: var(--faint);
+}
+
+/* Experience rows */
+.exp__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp__row {
+  display: grid;
+  grid-template-columns: 220px 1fr 1.1fr;
+  gap: 36px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line-soft);
   cursor: pointer;
-} */
-
-.experiencia__lugares ul {
-  list-style: none;
-  font-size: 1.1rem;
-  padding: 0;
+  transition: background 0.15s, padding-left 0.15s;
+  border-radius: 4px;
 }
 
-.experiencia__lugares ul li.active {
-  background-color: #151515;
-  border-left: 2px solid #7fd662;
+.exp__row:hover {
+  background: var(--bg-raise);
+  padding-left: 12px;
+}
+
+.exp__dates {
+  font-size: 12px;
+  color: var(--faint);
+  padding-top: 3px;
+  white-space: nowrap;
+}
+
+.exp__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
   font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
 }
 
-.experiencia__lugares li {
-  padding: 10px;
-  text-align: center;
-  border-left: 2px solid #272727;
-  transition: background-color 0.5s ease;
+.exp__company {
+  font-size: 12px;
+  color: var(--muted);
 }
 
-.experiencia__lugares ul li:hover {
-  background-color: #272727;
+.exp__desc p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
-.experiencia__descricao {
-  width: 60%;
-  margin-left: 5rem;
-  position: relative;
-  line-height: 1.5rem;
+.exp__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
 }
 
-.experiencia__descricao section.active {
-  display: block;
+/* Shared chip */
+.chip {
+  font-size: 11px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  letter-spacing: 0.02em;
 }
 
-.experiencia__descricao section.active.show-right {
-  animation: 0.5s forwards show-right;
-}
-
-.experiencia__descricao h2 {
-  font-size: 1.4rem;
-  display: inline-block;
-}
-
-.experiencia h1 {
-  font-size: 1.5rem;
-
-}
-
-.experiencia__descricao span {
-  font-size: 0.95rem;
-  position: absolute;
-  right: 0;
-  top: 5px;
-  font-weight: bold;
-}
-
-.experiencia__descricao-local {
-  margin: 2rem 0;
-  font-size: 0.85rem;
-  color: #7fd662 !important;
-  font-weight: bold;
-}
-
-@keyframes show-right {
-  from {
-    opacity: 0;
-    transform: translate3d(-30px, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+@media (max-width: 768px) {
+  .exp__row {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
-
-@keyframes show-down {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -30px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@media (max-width: 1325px) {
-  .experiencia {
-    padding: 6.5%;
-  }
-}
-
-@media (max-width: 880px) {
-  .experiencia {
-    padding: 22% 0;
-    text-align: center;
-  }
-
-  .sobre-mim {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .experiencia__wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .experiencia__lugares {
-    width: 250px;
-  }
-  .experiencia__lugares li {
-    border-left: none;
-    border-bottom: 2px solid #272727;
-  }
-
-  .experiencia__lugares ul li.active {
-    background-color: #151515;
-    border-left: none;
-    border-bottom: 2px solid #7fd662;
-    font-weight: 600;
-  }
-
-  .experiencia__descricao {
-    margin-left: 0;
-    margin-top: 2rem;
-    min-height: 46vh;
-    width: 90%;
-  }
-  .experiencia__descricao span {
-    display: block;
-    position: inherit;
-  }
-
-}
-
-

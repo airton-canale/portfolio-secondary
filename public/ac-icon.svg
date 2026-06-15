@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="AC — Airton Canale">
+  <rect x="6" y="6" width="500" height="500" rx="92" fill="#10130F" stroke="#41463D" stroke-width="10"></rect>
+  <g fill="none" stroke="#5CE6A0" stroke-width="15" stroke-linecap="square">
+    <path d="M88 148 V88 H148"></path>
+    <path d="M364 88 H424 V148"></path>
+    <path d="M424 364 V424 H364"></path>
+    <path d="M148 424 H88 V364"></path>
+  </g>
+  <g fill="none" stroke="#5CE6A0" stroke-width="30" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M150 342 L194 174 L238 342"></path>
+    <path d="M165 286 H223"></path>
+    <path d="M362 196 A72 74 0 1 0 362 318"></path>
+  </g>
+</svg>

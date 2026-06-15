@@ -1,59 +1,54 @@
-import React, { useEffect, useState } from "react";
-import GradientButton from "../Buttons/GradientButton";
+import React from "react";
 import "./home.css";
+import ImageSlot from "../ImageSlot/ImageSlot";
 
-const Home = ({ onScrollClick }) => {
-  const [display, setDisplay] = useState("");
-  const name = "Airton Canale";
+const INDEX_ITEMS = [
+  { label: "years of experience", value: "4+" },
+  { label: "projects shipped",    value: "10+" },
+  { label: "open to work",        value: "yes" },
+];
 
-  useEffect(() => {
-    name.split("").forEach((c, i) => {
-      setTimeout(() => setDisplay((prev) => name.slice(0, i + 1)), 180 * i);
-    });
-  }, []);
-
+const Home = () => {
   return (
-    <section className="principal" id="home">
-      <div className="principal__left">
-        <h1>Olá, eu sou</h1>
-        <span className="principal__sentence">{display}</span>
-        <span className="principal__input-cursor"></span>
-        <h1>Desenvolvedor Front-End</h1>
-        <div className="principal__botao">
-          <a
-            href="https://www.linkedin.com/in/airton-canale-045967237/"
-            target="_blank"
-          >
-            <GradientButton
-              src={"/assets/linkedin.png"}
-              alt={"linkedin"}
-              text={"Linkedin"}
-              className={"principal__botao-linkedin"}
-            />
-          </a>
-          <a href="https://github.com/airton-canale" target="_blank">
-            <GradientButton
-              src={"/assets/github.png"}
-              alt={"github"}
-              text={"Github"}
-              className={"principal__botao-github"}
-            />
-          </a>
+    <section id="home" className="hero">
+      <div className="container hero__inner">
+        <div className="hero__grid">
+          <div className="hero__left">
+            <h1 className="hero__name">
+              airton canale<span className="cursor" />
+            </h1>
+
+            <dl className="hero__def">
+              <dt>role</dt>
+              <dd>software engineer · full-stack</dd>
+
+              <dt>stack</dt>
+              <dd>python · react · django · aws</dd>
+
+              <dt>location</dt>
+              <dd>São Marcos, RS — Brazil</dd>
+
+              <dt>status</dt>
+              <dd>
+                <span className="status-dot" />
+                available for work
+              </dd>
+            </dl>
+          </div>
+
+          <div className="hero__right">
+            <ImageSlot id="hero-photo" aspectRatio="4/5" src="/assets/profileImage1.jpeg" alt="Airton Canale" />
+          </div>
         </div>
-      </div>
-      <div className="principal__right">
-        <img
-          src="/assets/image-undraw.svg"
-          alt="Ilustração representando uma desenvolvedora sentada na cadeira mexendo no notebook com ambiente em volta."
-          data-tilt
-        />
-      </div>
-      <div class="scroll">
-        <a onClick={onScrollClick}>
-          {" "}
-          <p class="inline"> scroll down </p>
-          <img class="inline" src="/assets/scroll.png" alt="scroll" />
-        </a>
+
+        <div className="hero__index">
+          {INDEX_ITEMS.map(({ label, value }) => (
+            <div key={label} className="hero__index-item">
+              <span className="hero__index-value">{value}</span>
+              <span className="hero__index-label">{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

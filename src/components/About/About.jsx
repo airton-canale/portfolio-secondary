@@ -1,61 +1,50 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import "./about.css";
+import ImageSlot from "../ImageSlot/ImageSlot";
 
-const About = forwardRef((props, ref) => {
+export default function About() {
   return (
-    <section
-      className="bg-dark-200 flex justify-around z-0 relative py-[6.5%] px-[15%] min-h-[35vh] sobre-mim"
-      id="sobre"
-      ref={ref}
-    >
-      <div className="min-w-[30%] sobre-mim__foto">
-        <img
-          className="w-4/5"
-          src="https://github.com/airton-canale.png"
-          alt="Me"
-        />
-      </div>
-      <div className="leading-6 w-[70%] sobre-mim__descricao">
-        <h1>Sobre mim</h1>
-        <h2 className="mb-4">São Marcos, Rio Grande do Sul</h2>
-        <p>
-          Desenvolvedor web Full-Stack, focado em ReactJS, com conhecimento
-          intermediário de Typescript, Python, Ionic e outras tecnologias
-          similares.
-        </p>
-        <div className="flex w-[350px] justify-between mt-8 sobre-mim__descricao-buttons">
-          <a
-            download="AirtonPortfolio.pdf"
-            href="/assets/AirtonPortfolio.pdf"
-            title="Portfolio"
-          >
-            <div className="flex items-center pt-[3px] px-[5px] pb-[5px] justify-evenly w-36 rounded-lg relative bg-dark-100 mt-4 font-semibold text-base tracking-[1.5px] h-10 sobre-mim__descricao-buttons-curriculo">
-              <img
-                className="pt-[9px] px-0 pb-[5px]"
-                src="/assets/cloud-download.png"
-                alt="download curriculum"
-              />
-              <p className="pt-[9px] px-0 pb-[5px]">Currículo</p>
+    <section id="about" className="section">
+      <div className="container">
+        <div className="section__header">
+          <div className="section__meta">
+            <span className="section__num">03</span>
+            <span className="section__title">about</span>
+          </div>
+        </div>
+
+        <div className="about__grid">
+          <div className="about__photo">
+            <ImageSlot id="about-photo" aspectRatio="1/1" src="/assets/profileImage2.jpeg" alt="Airton Canale" />
+          </div>
+
+          <div className="about__text">
+            <h2 className="about__heading">
+              Software engineer with 4+ years building web, mobile, and cloud-native applications.
+            </h2>
+
+            <p className="about__para">
+              I'm Airton, from São Marcos, Rio Grande do Sul. I'm skilled in Python, JavaScript/TypeScript,
+              React, Django, and AWS — delivering full-stack solutions across startups and freelance
+              engagements, from architecting microservices to deploying production infrastructure.
+            </p>
+
+            <p className="about__para">
+              Passionate about clean code, great UX, and automation. Currently pursuing a B.Sc. in
+              Software Engineering at PUCRS (expected Jul 2027).
+            </p>
+
+            <div className="about__actions">
+              <a
+                href="mailto:airtonluizcanalefilho@hotmail.com?subject=Airton, I found your portfolio!"
+                className="about__btn"
+              >
+                → email me
+              </a>
             </div>
-          </a>
-          <a
-            href="mailto: airtonluizcanalefilho@hotmail.com?subject=Airton, vim pelo seu portfólio!"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="flex items-center pt-[3px] px-[5px] pb-[5px] justify-evenly w-36 rounded-lg relative bg-dark-100 mt-4 font-semibold text-base tracking-[1.5px] h-10 sobre-mim__descricao-buttons-email">
-              <img
-                className="pt-[9px] px-0 pb-[5px] w-6"
-                src="/assets/email.png"
-                alt=""
-              />
-              <p className="pt-[9px] px-0 pb-[5px]">E-mail</p>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
   );
-});
-
-export default About;
+}

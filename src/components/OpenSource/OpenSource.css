@@ -1,0 +1,21 @@
+.opensource__gh-link {
+  font-size: 12px;
+  color: var(--faint);
+  transition: color 0.15s;
+}
+
+.opensource__gh-link:hover {
+  color: var(--accent);
+}
+
+.opensource__calendar {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+/* Override react-github-calendar text colors */
+.opensource__calendar text {
+  fill: var(--faint) !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+}

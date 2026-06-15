@@ -1,72 +1,86 @@
 .navbar {
-  /* py-0 px-[15%] flex items-center bg-dark-200 font-bold h-20 fixed w-full z-[100] */
-  padding: 0 15%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 56px;
+  background: color-mix(in oklch, var(--bg) 78%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.navbar__inner {
+  height: 100%;
   display: flex;
   align-items: center;
-  background-color: #151515;
-  border-bottom: 2px solid #272727;
-  font-weight: bold;
-  height: 80px;
-  transition: 0.3s;
-  position: fixed;
-  width: 100%;
-  z-index: 100;
+  gap: 32px;
 }
 
-.navbar.fixed {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+.navbar__logo {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.button-theme {
-  margin-top: -5px;
-  /* mt[-5px] */
+.navbar__logo-date {
+  color: var(--muted);
 }
 
-.navbar ul {
+.navbar__links {
   display: flex;
-  justify-content: end;
+  gap: 4px;
+  flex: 1;
 }
 
-.navbar ul li {
-  list-style: none;
-  margin: 10px 30px;
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--faint);
+  padding: 4px 8px;
+  transition: color 0.15s;
 }
 
-.navbar ul li::after {
-  content: "";
-  display: block;
-  border-bottom: 2px solid #75ba75;
-  margin-top: 5px;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--fg);
 }
 
-.navbar ul li:hover::after {
-  transform: scaleX(1);
+.navbar__num {
+  color: var(--accent);
+  font-size: 10px;
 }
 
-.navbar ul a {
-  cursor: pointer;
+.navbar__theme {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
 }
 
-.navbar p {
-  padding: 10px;
-  font-size: 1.3rem;
-  width: 100%;
+.navbar__theme:hover {
+  border-color: var(--accent);
 }
 
-.navbar p a {
-  color: #75ba75;
-  transition: 0.3s;
+.navbar__theme-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
-.navbar p a:hover {
-  color: #8566e5;
-  cursor: pointer;
-}
-
-@media (max-width: 650px) {
-  #menu {
+@media (max-width: 768px) {
+  .navbar__links {
     display: none;
   }
 }
